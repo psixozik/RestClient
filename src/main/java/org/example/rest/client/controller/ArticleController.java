@@ -20,8 +20,8 @@ public class ArticleController {
         this.articleLoadService = articleLoadService;
     }
 
-    @GetMapping("/art")
-    public ResponseEntity<List<NYTArticleDBModel.Doc>> postResponseController(@RequestParam String id) {
+    @GetMapping("/user/{id}")
+    public ResponseEntity<List<NYTArticleDBModel.Doc>> postResponseController(@PathVariable("id") String id) {
 
        NYTArticleDBModel nytArticleDBModel = articleLoadService.loadArticlesByIdClient(id);
        if(nytArticleDBModel != null)

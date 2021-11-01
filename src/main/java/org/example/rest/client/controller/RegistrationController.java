@@ -21,7 +21,7 @@ public class RegistrationController {
         this.kafkaService = kafkaService;
     }
 
-    @PostMapping("/reg")
+    @PostMapping("/user")
     public ResponseEntity<String> postResponseController(@RequestBody RegModelRequest regModelRequest) {
 
         kafkaService.sendRegMessage(
